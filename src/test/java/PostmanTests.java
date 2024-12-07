@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 
-public class Postman {
+public class PostmanTests {
 
     private final static String postmanEchoPath = "https://postman-echo.com";
 
@@ -82,7 +82,7 @@ public class Postman {
     public void whenUpdateText_thenStatus200() {
         RestAssured.baseURI = postmanEchoPath;
 
-        String requestBody = "This is expected to be sent back as part of response body.";
+        String requestBody = "Inserted data.";
 
         Response response =
                 given()
@@ -106,7 +106,7 @@ public class Postman {
     public void whenSemiUpdateText_thenStatus200() {
         RestAssured.baseURI = postmanEchoPath;
 
-        String requestBody = "This is expected to be sent back as part of response body.";
+        String requestBody = "Updated data.";
 
         Response response =
                 given()
